@@ -9,6 +9,7 @@
 #define RIGHT 67
 #define UP 65
 #define DOWN 66
+#define ETC 100
 
 #define SPACE 32 //hard drop
 #define p 112 //일시정지 
@@ -22,15 +23,19 @@
 #define EMPTY '0'         // 블록이 이동할 수 없는 공간은 양수로 표현 
 #define WALL '2'
 #define INACTIVE_BLOCK '3' // 이동이 완료된 블록값 
-#define CEILLING '4'     
+#define CEILLING '4'
+#define FLOOR '5'     
  
 #define MAIN_X 11 //게임판 가로크기 
 #define MAIN_Y 23 //게임판 세로크기 
 #define MAIN_X_ADJ 3 //게임판 위치조정 
 #define MAIN_Y_ADJ 1 //게임판 위치조정 
  
-#define STATUS_X_ADJ MAIN_X_ADJ + MAIN_X + 1 //게임정보표시 위치조정 
- 
+#define STATUS_X_ADJ MAIN_X_ADJ + MAIN_X * 2 + 2 //게임정보표시 위치조정 
+
+
+extern char path_block_data[100]; 
+extern char path_mainboard_data[100]; 
 extern int STATUS_Y_GOAL; //GOAL 정보표시위치Y 좌표 저장 
 extern int STATUS_Y_LEVEL; //LEVEL 정보표시위치Y 좌표 저장
 extern int STATUS_Y_SCORE; //SCORE 정보표시위치Y 좌표 저장
@@ -54,6 +59,7 @@ extern int speed; //게임진행속도
 extern int level; //현재 level 
 extern int level_goal; //다음레벨로 넘어가기 위한 목표점수 
 extern int cnt; //현재 레벨에서 제거한 줄 수를 저장 
+
 extern int score; //현재 점수 
 extern int last_score; //마지막게임점수 
 extern int best_score; //최고게임점수 

@@ -1,9 +1,9 @@
 #include "data.h"
 #include <stdio.h>
 
-int STATUS_Y_GOAL = 0;
-int STATUS_Y_LEVEL = 0; 
-int STATUS_Y_SCORE = 0; 
+int STATUS_Y_GOAL = 3;
+int STATUS_Y_LEVEL = 4; 
+int STATUS_Y_SCORE = 12; 
 int b_type = 0; 
 int b_rotation = 0; 
 int b_type_next = 0; 
@@ -28,3 +28,6 @@ int new_block_on = 0;
 int crush_on = 0; 
 int level_up_on = 0; 
 int space_key_on = 0;
+
+char path_block_data[100] = "./resources/block_data.txt"; 
+char path_mainboard_data[100] = "./resources/mainboard_data.txt";

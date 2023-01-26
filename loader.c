@@ -53,5 +53,6 @@ void load_mainboard_data(char * data_path) {
             main_org[i][j] = buffer[j];
         }
     }
+
     fclose(fp); 
 }
