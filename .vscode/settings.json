@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "data.h": "c",
+    "func.h": "c",
+    "loader.h": "c"
+  }
+}
