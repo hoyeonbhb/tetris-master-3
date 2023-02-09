@@ -26,7 +26,21 @@ void load_master_data() {
 }
 
 void draw_main() {
-	
+        GotoXY(MAIN_Y_ADJ, MAIN_X_ADJ);
+        for (int i = 0;i <= MAIN_Y; i++){
+            for (int j = 0;j <= MAIN_X; j++){
+                if(main_org[i][j] == EMPTY){
+                    printw(" ");
+                }
+                if(main_org[i][j] == CEILLING){
+                    printw("-");
+                }
+                if(main_org[i][j] == WALL){
+                    printw("|");
+                }
+            }
+        }
+
 }
 
 void reset() {
