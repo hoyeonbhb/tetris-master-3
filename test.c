@@ -55,9 +55,9 @@ void draw_map_test() {
     GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 13);
     printw("           %d", best_score);
     GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 15);
-    printw("    ⦽   :Shift         Space : Hard Drop");
+    printw("    ^   :Shift         Space : Hard Drop");
     GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 16);
-    printw("    ⬲ ⟴   :Left / Right   P : Pause");
+    printw("   < >    :Left / Right   P : Pause");
     GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 17);
     printw("    ↓  : soft drop         esc : Quit");
 }
