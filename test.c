@@ -63,13 +63,36 @@ void draw_map_test() {
     printw("    v  : soft drop         esc : Quit");
 }
 
+void next_rand_block_test(){
+    time_t tim;
+    time(&tim);
+    srand(tim);
+    
+    int rand_type = rand() % 7;
+    GotoXY(STATUS_X_ADJ + 4, STATUS_Y_LEVEL + 2);
+    for(int i = 0;i < 4; i++){
+        for(int j = 0;j < 4; j++){
+            if(blocks[rand_type][0][i][j] == EMPTY){
+                printw(" ");
+            }
+            if(blocks[rand_type][0][i][j] == ACTIVE_BLOCK){
+                printw("▉");
+            }
+            GotoXY(STATUS_X_ADJ + 4 + j, STATUS_Y_LEVEL + 2);
+        }
+        GotoXY(STATUS_X_ADJ + 4, STATUS_Y_LEVEL + 3 + i);
+    }
+}
+
 int main(){
     setlocale(LC_ALL, "");
     initscr();
     load_master_data();
     GotoXY(2,4);
     draw_mainboard_test();
+    load_master_data();
     draw_map_test();
+    next_rand_block_test();
     refresh();
     getch();
     endwin();

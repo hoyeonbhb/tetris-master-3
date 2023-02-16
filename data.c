@@ -9,7 +9,7 @@ int b_rotation = 0;
 int b_type_next = 0; 
 char main_org[MAIN_Y][MAIN_X] = {{0,},}; 
 char main_cpy[MAIN_Y][MAIN_X] = {{0,},}; 
-char blocks[7][4][4][4] = {{{{0,},},},}; 
+char blocks[7][4][4][4] = {{{{0,},},},}; // [종류 t0-7][로테이트 종류][가로][세로]
 
 int bx = 0, by = 0; 
 int key = 0;
