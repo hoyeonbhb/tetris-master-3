@@ -12,7 +12,7 @@
 void draw_mainboard_test() {
         for (int i = 0;i < MAIN_Y; i++){
             for (int j = 0;j < MAIN_X; j++){
-                GotoXY(MAIN_Y_ADJ + j, MAIN_X_ADJ + i);
+                GotoXY(MAIN_X_ADJ + j * 2, MAIN_Y_ADJ + i );
                 if(main_org[i][j] == EMPTY){
                     printw(" ");
                 }
@@ -36,30 +36,31 @@ void draw_map_test() {
     printw("%d", level_goal);
     GotoXY(STATUS_X_ADJ, STATUS_Y_LEVEL + 1);
     printw("+- N E X T -+");
-    for (int i = 0; i < 8; i++){
+    for (int i = 0; i < 4; i++){
         GotoXY(STATUS_X_ADJ, STATUS_Y_LEVEL + 2 + i);
         printw("|           |");
+
     }
-    GotoXY(STATUS_X_ADJ, STATUS_Y_LEVEL + 1 + 9);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_LEVEL + 1 + 5);
     printw("+- - - - - -+");
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 6);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE);
     printw("your score :");
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 7);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 1);
     printw("           %d", score);
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 9);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 2);
     printw("last score :");
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 10);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 3);
     printw("           %d", last_score);
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 12);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 4);
     printw("best score :");
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 13);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 5);
     printw("           %d", best_score);
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 15);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 7);
     printw("    ^   :Shift         Space : Hard Drop");
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 16);
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 8);
     printw("   < >    :Left / Right   P : Pause");
-    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 17);
-    printw("    ↓  : soft drop         esc : Quit");
+    GotoXY(STATUS_X_ADJ, STATUS_Y_SCORE + 9);
+    printw("    v  : soft drop         esc : Quit");
 }
 
 int main(){
