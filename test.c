@@ -67,19 +67,22 @@ void next_rand_block_test(){
     time_t tim;
     time(&tim);
     srand(tim);
-    
-    int rand_type = rand() % 7;
+    GotoXY(150, 150);
+    int rand_type = rand() % 7;// 계산식이 문제 랜덤이 아니라 4만 나옴
+    printw("%d", rand_type);
     for(int i = 0;i < 4; i++){
         for(int j = 0;j < 4; j++){
-            GotoXY(STATUS_X_ADJ + 4 + j, STATUS_Y_LEVEL + 2 + j);
+            GotoXY(STATUS_X_ADJ + 4 + i, STATUS_Y_LEVEL + 2 + j);
             if(blocks[rand_type][0][i][j] == EMPTY){
                 printw(" ");
             }
             if(blocks[rand_type][0][i][j] == ACTIVE_BLOCK){
-                printw("▉");
+                printw("⚀");
             }
         }
     }
+    GotoXY(100, 100);
+    printw("%d", rand_type);
 }
 
 int main(){
