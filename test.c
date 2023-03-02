@@ -68,21 +68,36 @@ void next_rand_block_test(){
     time(&tim);
     srand(tim);
     GotoXY(150, 150);
-    int rand_type = rand() % 7;// 계산식이 문제 랜덤이 아니라 4만 나옴
-    printw("%d", rand_type);
+    b_type_next = rand() % 4 + rand() % 3;// 계산식이 문제 랜덤이 아니라 4만 나옴
     for(int i = 0;i < 4; i++){
         for(int j = 0;j < 4; j++){
-            GotoXY(STATUS_X_ADJ + 4 + i, STATUS_Y_LEVEL + 2 + j);
-            if(blocks[rand_type][0][i][j] == EMPTY){
+            GotoXY(STATUS_X_ADJ + 4 + j * 2, STATUS_Y_LEVEL + 2 + i);
+            if(blocks[b_type_next][0][i][j] == EMPTY){
                 printw(" ");
             }
-            if(blocks[rand_type][0][i][j] == ACTIVE_BLOCK){
+            if(blocks[b_type_next][0][i][j] == ACTIVE_BLOCK){
                 printw("⚀");
             }
         }
     }
-    GotoXY(100, 100);
-    printw("%d", rand_type);
+}
+
+
+void drop_block_test(){
+
+    GotoXY( X_START_POS, Y_START_POS);
+    for(int i = 0;i < 4; i++){
+        for(int j = 0;j < 4; j++){
+            GotoXY(X_START_POS + 4 + j * 2, Y_START_POS + 2 + i);
+            if(blocks[b_type_next][0][i][j] == EMPTY){
+                printw(" ");
+            }
+            if(blocks[b_type_next][0][i][j] == ACTIVE_BLOCK){
+                printw("⚀");
+            }
+        }
+    }
+
 }
 
 int main(){
@@ -94,6 +109,7 @@ int main(){
     load_master_data();
     draw_map_test();
     next_rand_block_test();
+    drop_block_test();
     refresh();
     getch();
     endwin();
