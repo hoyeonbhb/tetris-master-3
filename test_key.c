@@ -8,19 +8,63 @@
 #define DOWN 66
 #define ARROW 27
 #define ARROW2 91
-void arrow_convert (){
-    int Key[3];
-    for(int i = 0;i <= 3; i++){
-           Key[i] = getchar();
+
+int kbhit()
+{
+    int ch = getch();
+
+    if (ch != ERR)
+    {
+        ungetch(ch);
+        return 1;
     }
-    printw("%d",Key[0]);
+    else
+    {
+        return 0;
+    }
 }
 
-int main(void){   
-setlocale(LC_ALL, "");
+void MoveMaze()
+{
+
+    if (getchar() == ARROW && getchar() == ARROW2)
+    {
+        int nkey = getchar();
+        switch (nkey)
+        {
+        case UP:
+            printw("위 ");
+            break; 
+
+        case DOWN:
+            printw("아래 ");
+            break;
+
+        case LEFT:
+            printw("왼쪽 ");
+            break;
+
+        case RIGHT:
+            printw("오른쪽 ");
+            break;
+        } 
+
+        refresh();
+    }
+}
+
+int main(void)
+{
+    setlocale(LC_ALL, "");
     initscr();
-    arrow_convert();
-    refresh();
+
+
+    while (1)
+    {
+        kbhit();
+        MoveMaze();
+        // printw("%d \n", getchar());
+        refresh();
+    }
     endwin();
-    return 0;
 }

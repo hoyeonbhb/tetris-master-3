@@ -25,6 +25,7 @@ void draw_mainboard_test() {
                 }
             }
         }
+
 }
 
 void draw_map_test() {
@@ -84,6 +85,9 @@ void next_rand_block_test(){
 
 
 void drop_block_test(){
+    int active_blok_position_i[4];
+    int active_blok_position_j[4];
+    int con = 0;
     GotoXY( X_START_POS, Y_START_POS);
     for(int i = 0;i < 4; i++){
         for(int j = 0;j < 4; j++){
@@ -93,10 +97,20 @@ void drop_block_test(){
             }
             if(blocks[b_type_next][0][i][j] == ACTIVE_BLOCK){
                 printw("⚀");
+                    active_blok_position_i[con] = i;
+                    active_blok_position_j[con] = j;
+                    con++;
             }
         }
     }
-    
+    con = 0;
+    while(1){
+        for(int i = 0;i <= 3; i++){
+            GotoXY(active_blok_position_i[i], active_blok_position_j[i]);
+            printf(" ");
+            sleep(1);
+        }
+    }
 }
 
 int main(){
@@ -108,8 +122,8 @@ int main(){
     load_master_data();
     draw_map_test();
     next_rand_block_test();
-    drop_block_test();
     refresh();
+    drop_block_test();
     getch();
     endwin();
     return 0;
