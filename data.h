@@ -33,6 +33,9 @@
  
 #define STATUS_X_ADJ MAIN_X_ADJ + MAIN_X * 2 + 2 //게임정보표시 위치조정 
 
+#define X_START_POS 10
+#define Y_START_POS 4
+
 
 extern char path_block_data[100]; 
 extern char path_mainboard_data[100]; 
