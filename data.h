@@ -32,9 +32,9 @@
 #define MAIN_Y_ADJ 1 //게임판 위치조정 
  
 #define STATUS_X_ADJ MAIN_X_ADJ + MAIN_X * 2 + 2 //게임정보표시 위치조정 
-
-#define X_START_POS 10
-#define Y_START_POS 4
+v
+#define X_START_POS 8
+#define Y_START_POS 2
 
 
 extern char path_block_data[100]; 

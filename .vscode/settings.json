@@ -2,7 +2,8 @@
   "files.associations": {
     "data.h": "c",
     "func.h": "c",
-    "loader.h": "c"
+    "loader.h": "c",
+    "__node_handle": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

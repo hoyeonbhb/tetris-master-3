@@ -84,7 +84,6 @@ void next_rand_block_test(){
 
 
 void drop_block_test(){
-
     GotoXY( X_START_POS, Y_START_POS);
     for(int i = 0;i < 4; i++){
         for(int j = 0;j < 4; j++){
@@ -97,7 +96,7 @@ void drop_block_test(){
             }
         }
     }
-
+    
 }
 
 int main(){
